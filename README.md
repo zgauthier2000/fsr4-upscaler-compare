@@ -24,8 +24,6 @@ game). The output is shown with one plain display mapping for all pictures, x/(1
 - AMD FSR 4.1.1 and FSR 3.1 ran through AMD's own library, HelixSR 2.0 through its own library, XeSS through Intel's SDK library.
 - AMD FSR 4.1.2 Lite and the upcoming builds ran in this project's local test harness, not AMD's own runtime.
 - The upcoming builds are unreleased. 4.1.2-lossy and 4.1.2l-lossy are lossy: they change the picture to run faster.
-- 4.1.2-exact and 4.1.2l-exact make the same picture as AMD FSR 4.1.1 and AMD FSR 4.1.2 Lite byte for byte (checked on these
-  clips), so their entries show those frames.
 
 ## Timings
 
