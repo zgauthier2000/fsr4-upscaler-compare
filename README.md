@@ -7,8 +7,11 @@ Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1
 
 | Set | Game | What to look at |
 |---|---|---|
+| `stellarblade-shield` | Stellar Blade (demo) | a warship over the planet in the opening: engraved hull, debris, tracers |
+| `stellarblade-armor` | Stellar Blade (demo) | EVE leaving the escape pod in the opening: glassy shards, ponytail, sparks |
+| `stellarblade-pods` | Stellar Blade (demo) | escape pods spiraling down through the clouds: pods, debris, streaks |
 | `sottr-stairs` | Shadow of the Tomb Raider | distant stairs and railings: thin lines that crawl |
-| `sottr-lara` | Shadow of the Tomb Raider | Lara's hair at the start of the built-in benchmark |
+| `sottr-jungle` | Shadow of the Tomb Raider | the jungle path: dense leaves, hanging vines, fog |
 | `wukong-bridge` | Black Myth: Wukong Benchmark Tool | the bamboo bridge: thin railings, foliage, rock |
 
 ## These are not game screenshots

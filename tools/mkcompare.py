@@ -45,6 +45,12 @@ def sources(p, n):
         return fs[-n:]
     return [p]
 
+def encode(job):      # one frame: load, crop, encode (lossless WebP method 6: only ~20% slower than method 4 for 1.6% smaller files, measured 2026-10-26)
+    src, crop, fpath, png = job; a = load(src)
+    if crop: x, y, w, h = crop; a = a[y:y + h, x:x + w]
+    Image.fromarray(np.ascontiguousarray(a)).save(fpath, **({'optimize': True} if png else {'lossless': True, 'method': 6})); return a.shape, os.path.getsize(fpath)
+import concurrent.futures as _cf
+POOL = None
 def main():
     args = sys.argv[1:]; opt = {}
     lnotes, same = {}, []
@@ -64,16 +70,14 @@ def main():
     for n, it in enumerate(items):
         label, _, path = it.partition('=')
         if not path: sys.exit(f'mkcompare: "{it}" is not Label=path')
+        srcs = list(sources(path, nf))
+        jobs = [(src, crop, f'{out}/' + f'{n + 1:02d}' + (f'_{k + 1:02d}' if nf > 1 or ',' in path else '') + ('.png' if png else '.webp'), png) for k, src in enumerate(srcs)]
+        res = list(POOL.map(encode, jobs))      # frames load, crop and encode in parallel (2026-10-26: one core took ~15 min for 336 frames)
         files = []
-        for k, src in enumerate(sources(path, nf)):
-            a = load(src)
-            if crop: x, y, w, h = crop; a = a[y:y + h, x:x + w]
-            if shape and a.shape != shape: print(f'note: {label} is {a.shape[1]}x{a.shape[0]}, the first picture {shape[1]}x{shape[0]}: the page scales it to fit')
-            shape = shape or a.shape
-            f = f'{n + 1:02d}' + (f'_{k + 1:02d}' if nf > 1 or ',' in path else '') + ('.png' if png else '.webp')
-            Image.fromarray(np.ascontiguousarray(a)).save(f'{out}/{f}', **({'optimize': True} if png else {'lossless': True, 'method': 6}))
-            total += os.path.getsize(f'{out}/{f}'); files.append(f)
-        L.append([label, files if len(files) > 1 else files[0]] + ([lnotes[label]] if label in lnotes else [])); print(f'{label}: {a.shape[1]}x{a.shape[0]}, {len(files)} frame(s)')
+        for (shp, size), (_, _, fpath, _) in zip(res, jobs):
+            if shape and shp != shape: print(f'note: {label} is {shp[1]}x{shp[0]}, the first picture {shape[1]}x{shape[0]}: the page scales it to fit')
+            shape = shape or shp; total += size; files.append(os.path.basename(fpath))
+        L.append([label, files if len(files) > 1 else files[0]] + ([lnotes[label]] if label in lnotes else [])); print(f'{label}: {shape[1]}x{shape[0]}, {len(files)} frame(s)')
     for new, old in same:
         j = next((i for i, e in enumerate(L) if e[0] == old), None)
         if j is None: sys.exit(f'mkcompare: --same {new}={old}: no picture labeled {old}')
@@ -89,4 +93,6 @@ def main():
     json.dump(sets, open(ix, 'w'), indent=1)
     print(f'set "{name}": {len(L)} pictures, {total / 1e6:.1f} MB' + ('  (large: consider --crop)' if total > 15e6 else ''))
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    POOL = _cf.ProcessPoolExecutor(max_workers=max(1, (os.cpu_count() or 2) - 1))
+    main()

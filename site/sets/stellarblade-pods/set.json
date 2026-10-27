@@ -1,0 +1,165 @@
+{
+ "title": "Stellar Blade (demo): escape pods spiraling down through the clouds in the opening, 4K",
+ "note": "",
+ "images": [
+  [
+   "AMD FSR 4.1.1",
+   [
+    "01_01.webp",
+    "01_02.webp",
+    "01_03.webp",
+    "01_04.webp",
+    "01_05.webp",
+    "01_06.webp",
+    "01_07.webp",
+    "01_08.webp",
+    "01_09.webp",
+    "01_10.webp",
+    "01_11.webp",
+    "01_12.webp",
+    "01_13.webp",
+    "01_14.webp",
+    "01_15.webp",
+    "01_16.webp"
+   ],
+   "4.86 ms"
+  ],
+  [
+   "AMD FSR 4.1.2 Lite",
+   [
+    "02_01.webp",
+    "02_02.webp",
+    "02_03.webp",
+    "02_04.webp",
+    "02_05.webp",
+    "02_06.webp",
+    "02_07.webp",
+    "02_08.webp",
+    "02_09.webp",
+    "02_10.webp",
+    "02_11.webp",
+    "02_12.webp",
+    "02_13.webp",
+    "02_14.webp",
+    "02_15.webp",
+    "02_16.webp"
+   ],
+   "2.02 ms"
+  ],
+  [
+   "4.1.2-lossy (upcoming)",
+   [
+    "03_01.webp",
+    "03_02.webp",
+    "03_03.webp",
+    "03_04.webp",
+    "03_05.webp",
+    "03_06.webp",
+    "03_07.webp",
+    "03_08.webp",
+    "03_09.webp",
+    "03_10.webp",
+    "03_11.webp",
+    "03_12.webp",
+    "03_13.webp",
+    "03_14.webp",
+    "03_15.webp",
+    "03_16.webp"
+   ],
+   "2.23 ms"
+  ],
+  [
+   "4.1.2l-lossy (upcoming)",
+   [
+    "04_01.webp",
+    "04_02.webp",
+    "04_03.webp",
+    "04_04.webp",
+    "04_05.webp",
+    "04_06.webp",
+    "04_07.webp",
+    "04_08.webp",
+    "04_09.webp",
+    "04_10.webp",
+    "04_11.webp",
+    "04_12.webp",
+    "04_13.webp",
+    "04_14.webp",
+    "04_15.webp",
+    "04_16.webp"
+   ],
+   "1.68 ms"
+  ],
+  [
+   "FSR 3.1",
+   [
+    "05_01.webp",
+    "05_02.webp",
+    "05_03.webp",
+    "05_04.webp",
+    "05_05.webp",
+    "05_06.webp",
+    "05_07.webp",
+    "05_08.webp",
+    "05_09.webp",
+    "05_10.webp",
+    "05_11.webp",
+    "05_12.webp",
+    "05_13.webp",
+    "05_14.webp",
+    "05_15.webp",
+    "05_16.webp"
+   ],
+   "1.16 ms"
+  ],
+  [
+   "HelixSR 2.0",
+   [
+    "06_01.webp",
+    "06_02.webp",
+    "06_03.webp",
+    "06_04.webp",
+    "06_05.webp",
+    "06_06.webp",
+    "06_07.webp",
+    "06_08.webp",
+    "06_09.webp",
+    "06_10.webp",
+    "06_11.webp",
+    "06_12.webp",
+    "06_13.webp",
+    "06_14.webp",
+    "06_15.webp",
+    "06_16.webp"
+   ],
+   "1.83 ms"
+  ],
+  [
+   "XeSS (Quality)",
+   [
+    "07_01.webp",
+    "07_02.webp",
+    "07_03.webp",
+    "07_04.webp",
+    "07_05.webp",
+    "07_06.webp",
+    "07_07.webp",
+    "07_08.webp",
+    "07_09.webp",
+    "07_10.webp",
+    "07_11.webp",
+    "07_12.webp",
+    "07_13.webp",
+    "07_14.webp",
+    "07_15.webp",
+    "07_16.webp"
+   ],
+   "4.96 ms"
+  ]
+ ],
+ "a": 2,
+ "b": 4,
+ "fps": 8,
+ "intro": "<strong>Not game screenshots:</strong> each picture is an upscaler's raw output from the same recorded game frames, shown with a plain display mapping, without the game's tone mapping, effects or UI.",
+ "about": "<h2>What you are looking at</h2>\n<p>Stellar Blade (demo): escape pods spiraling down through the clouds in the opening (pods, debris, streaks). We recorded 120 consecutive frames of the game's upscaler inputs with a small recording layer between OptiScaler and the upscaler: the rendered picture at\n2561x1441 (before upscaling), depth, motion vectors, camera jitter, exposure and frame timing, exactly as the game handed them to the upscaler. Output size 3840x2160 (4K).</p>\n<h2>How the comparison is made</h2>\n<p>Every upscaler here is fed the same recorded frames, frame by frame, from the same start, so the only difference between two pictures is the upscaler. The last 16 frames\nplay as an animation (pause with the button or Space); the crop is the same region in every picture.</p>\n<h2>What is not in these pictures</h2>\n<p>The game's own tone mapping, color grading, bloom, film grain, sharpening and UI are not applied: those run after the upscaler in the game. The upscaler's linear output is\nshown with one plain mapping for all (x/(1+x), gamma 2.2), so colors and contrast differ from the game; differences between upscalers are what to look at.</p>\n<h2>How each upscaler ran</h2>\n<p>AMD FSR 4.1.1 and FSR 3.1 through AMD's own library; HelixSR 2.0 through its own library; XeSS through Intel's SDK library (Quality). AMD FSR 4.1.2 Lite and the two upcoming\nbuilds (4.1.2-lossy, 4.1.2l-lossy) ran in this project's local test harness, not AMD's own runtime. The upcoming builds are unreleased and lossy: they change the picture to run\nfaster.</p>\n<h2>Timings</h2>\n<p>The time beside each name is one upscale at 4K (from 2260x1272, a moving scene) measured on an RX 7800 XT under Linux (Proton) with this project's timing program, not taken\nfrom these clips (XeSS: GPU timestamps around each XeSS call in a separate test program, same sizes). Timings will differ on Windows, and between GPUs: a different card can rank these upscalers differently.</p>"
+}

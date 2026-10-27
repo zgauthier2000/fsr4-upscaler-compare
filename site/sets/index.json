@@ -1,11 +1,23 @@
 [
  {
+  "name": "stellarblade-shield",
+  "title": "Stellar Blade (demo): a warship over the planet in the opening, 4K"
+ },
+ {
+  "name": "stellarblade-armor",
+  "title": "Stellar Blade (demo): EVE leaving the escape pod in the opening, 4K"
+ },
+ {
+  "name": "stellarblade-pods",
+  "title": "Stellar Blade (demo): escape pods spiraling down through the clouds in the opening, 4K"
+ },
+ {
   "name": "sottr-stairs",
   "title": "Shadow of the Tomb Raider: distant stairs and railings, 4K"
  },
  {
-  "name": "sottr-lara",
-  "title": "Shadow of the Tomb Raider: Lara at the start of the built-in benchmark, 4K"
+  "name": "sottr-jungle",
+  "title": "Shadow of the Tomb Raider: the jungle path, 4K"
  },
  {
   "name": "wukong-bridge",
