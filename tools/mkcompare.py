@@ -89,7 +89,8 @@ def main():
     if '--about' in opt: s['about'] = open(os.path.expanduser(opt['--about'])).read()
     json.dump(s, open(f'{out}/set.json', 'w'), indent=1)
     ix = os.path.join(root, 'sets', 'index.json'); sets = json.load(open(ix)) if os.path.exists(ix) else []
-    sets = [x for x in sets if x['name'] != name] + [{'name': name, 'title': s['title']}]
+    if any(x['name'] == name for x in sets): sets = [({'name': name, 'title': s['title']} if x['name'] == name else x) for x in sets]      # a rebuilt set keeps its place (the first one opens)
+    else: sets.append({'name': name, 'title': s['title']})
     json.dump(sets, open(ix, 'w'), indent=1)
     print(f'set "{name}": {len(L)} pictures, {total / 1e6:.1f} MB' + ('  (large: consider --crop)' if total > 15e6 else ''))
 
