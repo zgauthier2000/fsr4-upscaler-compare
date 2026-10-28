@@ -1,17 +1,5 @@
 [
  {
-  "name": "stellarblade-shield",
-  "title": "Stellar Blade (demo): a warship over the planet in the opening, 4K"
- },
- {
-  "name": "stellarblade-armor",
-  "title": "Stellar Blade (demo): EVE leaving the escape pod in the opening, 4K"
- },
- {
-  "name": "stellarblade-pods",
-  "title": "Stellar Blade (demo): escape pods spiraling down through the clouds in the opening, 4K"
- },
- {
   "name": "sottr-stairs",
   "title": "Shadow of the Tomb Raider: distant stairs and railings, 4K"
  },
@@ -22,5 +10,17 @@
  {
   "name": "wukong-bridge",
   "title": "Black Myth: Wukong Benchmark Tool: the bamboo bridge, 4K"
+ },
+ {
+  "name": "stellarblade-shield",
+  "title": "Stellar Blade (demo): a warship over the planet in the opening, 4K"
+ },
+ {
+  "name": "stellarblade-armor",
+  "title": "Stellar Blade (demo): EVE leaving the escape pod in the opening, 4K"
+ },
+ {
+  "name": "stellarblade-pods",
+  "title": "Stellar Blade (demo): escape pods spiraling down through the clouds in the opening, 4K"
  }
 ]
