@@ -1,6 +1,6 @@
 # FSR 4 upscaler comparison
 
-Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1.1, AMD FSR 4.1.2 Lite, the upcoming builds of
+Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1.1, AMD FSR 4.1.2 Lite, the lossy builds of release dll-2026-10-29 of
 [fsr4-shader-performance-overrides](https://github.com/zgauthier2000/fsr4-shader-performance-overrides), HLX FSR 4 and HLX DLSS (HelixSR 3.2.0) and XeSS.
 
 **Open the pages:** https://zgauthier2000.github.io/fsr4-upscaler-compare/
@@ -29,8 +29,8 @@ game). The output is shown with one plain display mapping for all pictures, x/(1
 - HLX DLSS (HelixSR 3.2.0) ran through HelixSR's bundled OptiScaler build. It is HelixSR 2.0's network: on four of the six clips it gives HelixSR 2.0's
   pictures byte for byte, on the two other Stellar Blade clips very close ones.
 - FSR 3.1 is no longer shown, to keep the site within its size limit.
-- AMD FSR 4.1.2 Lite and the upcoming builds ran in this project's local test harness, not AMD's own runtime.
-- The upcoming builds are unreleased. 4.1.2-lossy and 4.1.2l-lossy are lossy: they change the picture to run faster.
+- AMD FSR 4.1.2 Lite and this project's builds ran in this project's local test harness, not AMD's own runtime.
+- 4.1.2-lossy and 4.1.2l-lossy (release dll-2026-10-29) are lossy: they change the picture to run faster.
 
 ## Timings
 
