@@ -13,7 +13,7 @@ Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1
 | `sottr-stairs` | Shadow of the Tomb Raider | distant stairs and railings: thin lines that crawl |
 | `sottr-jungle` | Shadow of the Tomb Raider | the jungle path: dense leaves, hanging vines, fog |
 | `wukong-bridge` | Black Myth: Wukong Benchmark Tool | the bamboo bridge: thin railings, foliage, rock |
-| `cyberpunk-street` | Cyberpunk 2077 | a sidewalk seen over a concrete wall: barbed wire, concrete posts, an officer walking; also shows the lossy builds of dll-2026-11-05 |
+| `cyberpunk-bar` | Cyberpunk 2077 | the bar of El Coyote Cojo: stools, painted floor tiles, neon, haze; also shows the lossy builds of dll-2026-11-05 |
 
 ## These are not game screenshots
 
@@ -28,7 +28,7 @@ game). The output is shown with one plain display mapping for all pictures, x/(1
 - AMD FSR 4.1.2 is AMD's FSR 4.1.2 for RX 7000 cards, which gives FSR 4.1.1's picture byte for byte; the pictures come from AMD's own FSR 4.1.1 library.
 - AMD FSR 4.1.2 Lite and this project's builds ran in this project's local test harness, not AMD's own runtime.
 - 4.1.2-lossy and 4.1.2l-lossy (release dll-2026-11-22, RX 7000 archive) are lossy: they change the picture to run faster.
-- Each set plays 16 consecutive frames: the last 16 of the clip, except `stellarblade-armor` (frames 51 to 66 of 86).
+- Each set plays 16 consecutive frames: the last 16 of the clip, except `stellarblade-armor` (frames 51 to 66 of 86) and `cyberpunk-bar` (frames 24 to 39 of 117, where the camera is steadiest).
 
 ## Timings
 
