@@ -1,7 +1,7 @@
 # FSR 4 upscaler comparison
 
-Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1.1, AMD FSR 4.1.2 Lite, the lossy builds of release dll-2026-10-29 of
-[fsr4-shader-performance-overrides](https://github.com/zgauthier2000/fsr4-shader-performance-overrides), HLX FSR 4 and HLX DLSS (HelixSR 3.2.0) and XeSS.
+Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1.2, AMD FSR 4.1.2 Lite and the lossy builds of release dll-2026-11-22 of
+[fsr4-shader-performance-overrides](https://github.com/zgauthier2000/fsr4-shader-performance-overrides).
 
 **Open the pages:** https://zgauthier2000.github.io/fsr4-upscaler-compare/
 
@@ -13,6 +13,7 @@ Slider pages comparing upscalers on frames recorded from real games: AMD FSR 4.1
 | `sottr-stairs` | Shadow of the Tomb Raider | distant stairs and railings: thin lines that crawl |
 | `sottr-jungle` | Shadow of the Tomb Raider | the jungle path: dense leaves, hanging vines, fog |
 | `wukong-bridge` | Black Myth: Wukong Benchmark Tool | the bamboo bridge: thin railings, foliage, rock |
+| `cyberpunk-street` | Cyberpunk 2077 | a sidewalk seen over a concrete wall: barbed wire, concrete posts, an officer walking; also shows the lossy builds of dll-2026-11-05 |
 
 ## These are not game screenshots
 
@@ -24,19 +25,15 @@ the upscaler.
 The game's tone mapping, color grading, bloom, film grain, sharpening and UI are not applied (they run after the upscaler in the
 game). The output is shown with one plain display mapping for all pictures, x/(1+x) then gamma 2.2, so colors differ from the game.
 
-- AMD FSR 4.1.1 ran through AMD's own library (on RX 7000 cards AMD's FSR 4.1.2 gives the same picture), XeSS through Intel's SDK library.
-- HLX FSR 4 (HelixSR 3.2.0) ran in place of AMD's upscaler library; on this card it runs AMD's FSR 4.1.2 Lite network on HelixSR's own pipeline.
-- HLX DLSS (HelixSR 3.2.0) ran through HelixSR's bundled OptiScaler build. It is HelixSR 2.0's network: on four of the six clips it gives HelixSR 2.0's
-  pictures byte for byte, on the two other Stellar Blade clips very close ones.
-- FSR 3.1 is no longer shown, to keep the site within its size limit.
+- AMD FSR 4.1.2 is AMD's FSR 4.1.2 for RX 7000 cards, which gives FSR 4.1.1's picture byte for byte; the pictures come from AMD's own FSR 4.1.1 library.
 - AMD FSR 4.1.2 Lite and this project's builds ran in this project's local test harness, not AMD's own runtime.
-- 4.1.2-lossy and 4.1.2l-lossy (release dll-2026-10-29) are lossy: they change the picture to run faster.
+- 4.1.2-lossy and 4.1.2l-lossy (release dll-2026-11-22, RX 7000 archive) are lossy: they change the picture to run faster.
+- Each set plays 16 consecutive frames: the last 16 of the clip, except `stellarblade-armor` (frames 51 to 66 of 86).
 
 ## Timings
 
-The time beside each name is one upscale to 3840x2160 (from 2260x1272, a moving scene), measured on an RX 7800 XT under Linux
-(Proton) with the project's timing program, not taken from these clips. XeSS was timed with GPU timestamps around each call in a
-separate test program, at the same sizes. Timings will differ on Windows, and between GPUs: a different card can rank these
+The time beside each name is one upscale to 3840x2160 (from 2260x1272, a moving scene, two runs each), measured on an RX 7800 XT
+under Linux (Proton) with the project's timing program, not taken from these clips. Timings will differ on Windows, and between GPUs: a different card can rank these
 upscalers differently.
 
 ## Files
